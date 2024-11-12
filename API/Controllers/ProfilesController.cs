@@ -14,11 +14,14 @@ public class ProfilesController : BaseApiController
         return HandleResult(await Mediator.Send(new Application.Profiles.Details.Query { Username = username }));
     }
 
-    // [HttpPut]
-    // public async Task<IActionResult> Edit(Edit.Command command)
-    // {
-    //     return HandleResult(await Mediator.Send(command));
-    // }
+
+
+
+    [HttpPut]
+    public async Task<IActionResult> Edit(Application.Profiles.Edit.Command command)
+    {
+        return HandleResult(await Mediator.Send(command));
+    }
 
     // [HttpGet("{username}/activities")]
     // public async Task<IActionResult> GetUserActivities(string username,
